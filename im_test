@@ -1,0 +1,63 @@
+#! /opt/homebrew/Cellar/icarus-verilog/13.0/bin/vvp
+:ivl_version "13.0 (stable)" "(v13_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/va_math.vpi";
+S_0x13b606730 .scope module, "imem_tb" "imem_tb" 2 1;
+ .timescale 0 0;
+v0x6000010283f0_0 .var "addr", 15 0;
+v0x600001028480_0 .net "instruction", 15 0, L_0x600000928540;  1 drivers
+S_0x13b6068a0 .scope module, "dut" "imem" 2 5, 3 1 0, S_0x13b606730;
+ .timescale 0 0;
+    .port_info 0 /INPUT 16 "addr";
+    .port_info 1 /OUTPUT 16 "instruction";
+L_0x600000928540 .functor BUFZ 16, L_0x600001328000, C4<0000000000000000>, C4<0000000000000000>, C4<0000000000000000>;
+v0x6000010281b0_0 .net *"_ivl_0", 15 0, L_0x600001328000;  1 drivers
+v0x600001028240_0 .net "addr", 15 0, v0x6000010283f0_0;  1 drivers
+v0x6000010282d0_0 .net "instruction", 15 0, L_0x600000928540;  alias, 1 drivers
+v0x600001028360 .array "mem", 255 0, 15 0;
+L_0x600001328000 .array/port v0x600001028360, v0x6000010283f0_0;
+    .scope S_0x13b6068a0;
+T_0 ;
+    %pushi/vec4 43690, 0, 16;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x600001028360, 4, 0;
+    %pushi/vec4 48059, 0, 16;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x600001028360, 4, 0;
+    %pushi/vec4 52428, 0, 16;
+    %ix/load 4, 2, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x600001028360, 4, 0;
+    %pushi/vec4 56797, 0, 16;
+    %ix/load 4, 3, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0x600001028360, 4, 0;
+    %end;
+    .thread T_0;
+    .scope S_0x13b606730;
+T_1 ;
+    %vpi_call 2 10 "$dumpfile", "instruction_mem.vcd" {0 0 0};
+    %vpi_call 2 11 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x13b606730 {0 0 0};
+    %pushi/vec4 0, 0, 16;
+    %store/vec4 v0x6000010283f0_0, 0, 16;
+    %delay 10, 0;
+    %vpi_call 2 14 "$display", "instruction at %0d = %h", v0x6000010283f0_0, v0x600001028480_0 {0 0 0};
+    %pushi/vec4 1, 0, 16;
+    %store/vec4 v0x6000010283f0_0, 0, 16;
+    %delay 10, 0;
+    %vpi_call 2 17 "$display", "instruction at %0d = %h", v0x6000010283f0_0, v0x600001028480_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "imem_testbench.v";
+    "instruction_memory.v";

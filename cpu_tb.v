@@ -19,14 +19,16 @@ module cpu_tb;
       @(posedge clk);
       #1;
       reset = 0;
-      repeat(20) begin
+      repeat(10) begin
          @(posedge clk); #1;
-         $display("PC=%0d | IF=%h | R1=%0d R2=%0d R3=%0d",
+         $display("PC=%0d | IF=%h | R1=%0d R2=%0d R3=%0d R4=%0d R5=%0d",
                   dut.pc,
                   dut.instruction,
                   dut.rf0.registers[1],
                   dut.rf0.registers[2],
-                  dut.rf0.registers[3]
+                  dut.rf0.registers[3],
+                  dut.rf0.registers[4],
+                  dut.rf0.registers[5]
                   );
          // $display("PC=%0d | instr=%h | R1=%0d R2=%0d R3=%0d | zero=%b",
          //          dut.pc,

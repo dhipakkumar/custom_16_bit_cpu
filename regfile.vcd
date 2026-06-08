@@ -1,0 +1,99 @@
+$date
+	Fri Jun  5 15:59:56 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module regfile_tb $end
+$var wire 16 ! read2 [15:0] $end
+$var wire 16 " read1 [15:0] $end
+$var reg 1 # clk $end
+$var reg 3 $ rd [2:0] $end
+$var reg 3 % rs1 [2:0] $end
+$var reg 3 & rs2 [2:0] $end
+$var reg 16 ' write_data [15:0] $end
+$var reg 1 ( write_enable $end
+$scope module dut $end
+$var wire 1 # clk $end
+$var wire 3 ) rd [2:0] $end
+$var wire 3 * rs1 [2:0] $end
+$var wire 3 + rs2 [2:0] $end
+$var wire 16 , write_data [15:0] $end
+$var wire 1 ( write_enable $end
+$var wire 16 - read2 [15:0] $end
+$var wire 16 . read1 [15:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 .
+b0 -
+b0 ,
+b0 +
+b0 *
+b0 )
+0(
+b0 '
+b0 &
+b0 %
+b0 $
+0#
+b0 "
+b0 !
+$end
+#2
+1(
+b101010 '
+b101010 ,
+b1 $
+b1 )
+#5
+1#
+#6
+b101010 "
+b101010 .
+b1100100 '
+b1100100 ,
+b10 $
+b10 )
+b1 %
+b1 *
+#10
+0#
+#15
+1#
+#16
+b11001000 '
+b11001000 ,
+b11 $
+b11 )
+#20
+0#
+#25
+1#
+#26
+b1100100 "
+b1100100 .
+b11001000 !
+b11001000 -
+b11 &
+b11 +
+b10 %
+b10 *
+#27
+b1100100 '
+b1100100 ,
+b10 $
+b10 )
+#30
+0#
+#35
+1#
+#36
